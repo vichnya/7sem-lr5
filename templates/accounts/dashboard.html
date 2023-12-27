@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+
+{% block title %}Домашняя страница{% endblock %}
+
+{% block content %}
+    <h1>Домашняя страница</h1>
+    <p>Перейти к <a href="{% url "polls:index" %}">опросам</a>.</p>
+{% endblock %}

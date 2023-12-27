@@ -1,0 +1,20 @@
+{% block content %}
+  <h2>Создание нового опроса</h2>
+  <form method="post" action="{% url 'polls:create' %}">
+    {% csrf_token %}
+    {{ form.non_field_errors }}
+<div class="fieldWrapper">
+    {{ form.question_text.errors }}
+    <label for="{{ form.question_text.id_for_label }}">Название опроса:</label>
+    {{ form.question_text }}
+</div>
+      <p></p>
+<div class="fieldWrapper">
+    {{ form.choice_texts.errors }}
+    <label for="{{ form.choice_texts.id_for_label }}">Варианты опроса:</label>
+    {{ form.choice_texts }}
+</div>
+    <p></p>
+    <button type="submit">Создать</button>
+  </form>
+{% endblock %}
